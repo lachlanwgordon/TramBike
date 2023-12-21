@@ -17,6 +17,187 @@ Would be represented as:
 triangle = [(1, 2, 1), (2, 3, 1), (3, 1 ,1)]
 
 """
+tram = [#https://graphonline.ru/en/?graph=iTcYmOsFvXZhcvMs
+        (1,2,4.9), #Footscray
+        (2,3,0.5), #Maribyrnong junction
+        (2,4,3),
+        (4,5,1.7),
+        (5,6,7.5),
+        (5,7,3.1),
+        (7,4,3.9),
+        (7,9,0.6),
+        (9,12,7),
+        (9,13,1.2),
+        (13,14,0.7),
+        (14,9,2.2),
+        (13,16,0.6),
+        (14,16,0.3),
+        (13,17,5.1),
+        (17,19,0.4),#Brunswick Depot
+        (17,20,3.2),
+        (17,21,1),
+        (21,22,1.6),
+        (21,124,2.5),
+        (124,125,0.1),#Brunswick dead Stub
+        (124,23,3.6),
+        (23,16,0.3),
+        (23,24,0.3),
+        (24,25,0.9),
+        (25,26,0.3),
+        (26,27,4.4),
+        (26,28,0.3),
+        (28,29,6.4),
+        (29,30,3.1),
+        (29,31,0.6),#tram bridge
+        (31,32,10.6),#Bundoora
+        (31,28,7), 
+        (28,33,0.3),
+        (25,92,0.2),
+        (92,33,0.1),
+        (33,34,2.1),
+        (34,35,2),
+        (35,36,1),
+        (36,37,5.1),
+        (36,38,0.7),
+        (38,39,2),
+        (39,40,5.5),#Box Hill
+        (39,41,2.4),
+        (41,42,4.8),
+        (41,43,12),#Vermont South
+        (41,44,4.6),
+        (44,45,0.5),
+        (45,46,2.4),#Glen Iris
+        (45,47,0.6),
+        (47,48,2),
+        (47,49,0.6),
+        (49,50,0.8),
+        (50,51,3.3),#East Malvern
+        (50,52,1.6),
+        (52,53,3.3),
+        (52,54,3.1),
+        (52,55,3.7),
+        (55,56,0.5),
+        (56,57,0.3),
+        (55,57,0.4),
+        (57,50,3.1),
+        (56,58,0.8),
+        (58,59,0.2),# accland street
+        (58,60,1),#St Kilda Esplandade Curve
+        (60,61,0.4),
+        (61,62,0.6),
+        (62,56,1.3),
+        # (62,127,0.1), #FAke edge, add this and remove the next one if you don't like St Kilda Junction
+        (62,63,0.1),#remove this to make st kilda junction more palatable 
+        (63,64,0.9), # 1  00,000 pairsets
+        (64,57,1.3),
+        (64,65,2.1),
+        (65,47,1.1),
+        (65,49,1),   # 2,000,000 pairset, takes 5 seconds
+        (64,66,0.6),
+        (66,45,3.2),
+        (63,67,0.6), # 2,000,000 pairset, takes 5 seconds
+        (67,66,1.1), #34,000,000 takes 1:40
+        (66,68,0.6),
+        (68,44,3.2),#Malvern Road,34m
+        (44,69,0.9),#Glenferrie,34
+        (69,70,1.7),
+        (70,41,2),
+        (70,38,2.4),
+        (67,71,0.6),
+        (71,68,1.4),#Very Very Slow
+        (68,72,0.8),#Chapel
+        (72,69,3.2),#Toorak Road
+        (72,73,1.6),#Chapel/Church
+        (73,75,2.5),#Swan
+        (75,70,0.9),
+        (75,78,1.5),
+        (78,74,1.5),
+        (73,74,0.8),
+        (74,34,0.9),
+        (78,35,1.1),
+        (71,79,1),
+        (79,80,0.6,),
+        (80,72,1.2),
+        (80,126,1.2),# toorak dead metro stub
+        (79,81,0.6),
+        (81,82,1),#St Kilda Road
+        (82,83,0.7),#Princes Bridge
+        (83,84,0.5),#Flinder Streed
+        (84,73,2.7),#MOPT
+        (84,85,0.3),
+        (85,74,2.2),
+        (83,86,0.2),#swanston flinders collins
+        (86,87,0.2),#swanston collins bourke
+        (87,24,0.5),#swanston bourke latrobe
+        (85,89,0.2),#spring
+        (89,90,0.2),
+        (90,25,0.4),
+        (89,92,0.6),
+        (83,93,0.2),#flinders to elizabeth
+        (93,94,0.2),
+        (94,95,0.2),
+        (95,96,0.5),
+        (96,16,0.5),
+        (24,96,0.2),
+        (87,95,0.2),
+        (86,94,0.2),
+        (93,102,0.1),#flinders from Elizabeth to Market
+        (102,101,0.3),#Market and William
+        (101,100,0.2),#William collins bourke
+        (100,98,0.5),
+        (98,97,0.2),
+        (97,99,0.1),#Flagstaff Siding
+        (97,14,0.4),#Peel
+        (98,96,0.7),#latrobe elizabeth william
+        (100,95,0.7),#Bourke
+        (94,101,0.7),#Collins
+        (107,102,0.6),#Flinders to Spencer
+        (101,106,0.5),
+        (100,105,0.5),
+        (98,103,0.5),
+        (103,104,0.1),#Spencer Stub
+        (103,105,0.5),
+        (106,105,0.2),
+        (106,109,0.7),#Collins into docklands was missing
+        (107,106,0.2),
+        (103,108,0.6),#Latrobe into docklands
+        (108,112,0.3),
+        (112,113,0.3),#Footscray Road
+        (112,114,0.6),#North Docklands
+        (108,109,0.7),#Harbor Esplanade
+        (109,111,0.5),#South Docklands
+        (109,107,0.9),#Mission to Seafairers
+        (107,110,0.5),
+        (110,115,0.2),
+        (115,116,2.6),#Port Melbourne Light Rail
+        (115,117,1.3),#Start of St Kilda light rail
+        (117,118,1.7),#South Melbourne
+        (117,119,0.7),
+        (119,61,2.5),#Albert Park
+        (119,120,0.9),
+        (120,121,0.2),#Beach stub
+        (120,60,2.2),#Patterson Street Middle Park
+        (110,122,1.2),#Clarendon Street
+        (117,122,0.4),
+        (122,119,0.9),
+        (122,123,0.7),
+        (123,102,1.5),
+        (123,82,1.1),#Sturt and Southbank blvd
+        (123,81,0.7)
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ]
 
 # Non-Eularian, single edge, 1-2
 single = [(1,2,1)]
