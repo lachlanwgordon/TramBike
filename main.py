@@ -7,7 +7,9 @@ required to complete an Eularian circuit.
 
 """
 import argparse
+import datetime
 import sys
+from datetime import datetime
 
 import data.data
 from chinesepostman import eularian, network
@@ -31,7 +33,10 @@ def main():
     """Make it so."""
     edges = None
     args = setup_args()
-    graph_name = args.graph
+    graph_name = "tram"
+    args.start = 1
+    startTime = datetime.now()
+    print(f"starting: {startTime}")
     try:
         print('Loading graph: {}'.format(graph_name))
         edges = getattr(data.data, graph_name)
@@ -45,6 +50,7 @@ def main():
 
     original_graph = network.Graph(edges)
 
+    print(f"Original Graph Distance: {original_graph.total_cost}, Edges: {len(original_graph)}")
     print('<{}> edges'.format(len(original_graph)))
     if not original_graph.is_eularian:
         print('Converting to Eularian path...')
@@ -63,6 +69,11 @@ def main():
         print('\tSolved in <{}> attempts'.format(attempts))
         print('Solution: (<{}> edges)'.format(len(route) - 1))
         print('\t{}'.format(route))
+
+    endTime = datetime.now()
+    print(f"ending: {endTime}")
+    elapsedTime = endTime - startTime
+    print(f"elapsed {elapsedTime}")
 
 
 if __name__ == '__main__':

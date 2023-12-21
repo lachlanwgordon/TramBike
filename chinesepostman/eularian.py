@@ -138,17 +138,39 @@ def build_min_set(node_solutions):
     return path_set
 
 
-def find_minimum_path_set(pair_sets, pair_solutions):
+def find_minimum_path_set(pair_sets, pair_solutions, graph):
     """Return cheapest cost & route for all sets of node pairs."""
     cheapest_set = None
     min_cost = float('inf')
     min_route = []
+    # teststring = "test"
+    # count = 1
+    # print("about to count")
+    # count = len(pair_sets) 
+    progress = 0
     for pair_set in pair_sets:
         set_cost = sum(pair_solutions[pair][0] for pair in pair_set)
         if set_cost < min_cost:
             cheapest_set = pair_set
             min_cost = set_cost
             min_route = [pair_solutions[pair][1] for pair in pair_set]
+            print ("found new minimum!!!!")
+            candidateGraph = add_new_edges(graph, min_route)
+            candidateRoute, attempts = eularian_path(candidateGraph, 1)
+            if not candidateRoute: 
+                print("candidate failed")
+            else:
+                print("route found!!!!")
+                print(f"Original Graph Distance: {graph.total_cost}, Edges: {len(graph)}")
+                print(f"Route Distance: {candidateGraph.total_cost}, Edges: {len(candidateGraph)}")
+                print('\t{}'.format(candidateRoute))
+
+                #return cheapest_set, min_route
+                
+
+        progress +=1
+        if(progress < 100 or progress % 1000000 == 0):
+            print(f"             {progress:_} attempt")
 
     return cheapest_set, min_route
 
@@ -182,7 +204,7 @@ def make_eularian(graph):
     pair_sets = (x for x in unique_pairs(graph.odd_nodes))
 
     print('\tFinding cheapest route')
-    cheapest_set, min_route = find_minimum_path_set(pair_sets, pair_solutions)
+    cheapest_set, min_route = find_minimum_path_set(pair_sets, pair_solutions, graph)
     print('\tAdding new edges')
     return add_new_edges(graph, min_route), len(dead_ends)  # Add our new edges
 
